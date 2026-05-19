@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Marissa's Birthday Zodiac Basket 🌸</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:20px;
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:'Trebuchet MS', sans-serif;
+
+    background:
+    linear-gradient(to bottom,#070a1a,#141a33,#2a1f4d,#3b2b66);
+
+    color:white;
+    text-align:center;
+}
+
+/* TITLE */
+h1{
+    font-size:2.5rem;
+    color:#ffd6ec;
+    text-shadow:0 0 15px rgba(255,192,203,0.7);
+}
+
+/* SPOTIFY */
+.music-box{
+    margin:15px auto 25px;
+    width:90%;
+    max-width:360px;
+}
+
+/* SECTION */
+.section{
+    width:90%;
+    max-width:700px;
+    margin:15px auto;
+    padding:22px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+
+    transition:all 0.4s ease;
+    animation:fadeUp 0.5s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* CAKE */
+#cakeDisplay{
+    font-size:clamp(55px, 14vw, 90px);
+    cursor:pointer;
+}
+
+/* ANIMALS */
+.animal-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:20px 0;
+}
+
+.animal{
+    font-size:60px;
+    padding:14px;
+    border-radius:18px;
+    cursor:pointer;
+    background:rgba(255,255,255,0.08);
+    animation:float 3s ease-in-out infinite;
+    transition:transform 0.2s ease;
+}
+
+.animal:hover{
+    transform:scale(1.08);
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+
+/* IMAGES */
+.section img{
+    width:100%;
+    max-width:300px;
+    border-radius:15px;
+    margin-top:10px;
+}
+
+/* BUTTON */
+.close-btn{
+    margin-top:12px;
+    padding:10px 18px;
+    border:none;
+    border-radius:999px;
+    cursor:pointer;
+}
+
+/* 🌸 SAKURA */
+.petal{
+    position:fixed;
+    top:-10vh;
+    font-size:18px;
+    color:#ffd6e7;
+    animation:fall linear infinite;
+    opacity:0.8;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-10vh) rotate(0deg);}
+    100%{transform:translateY(120vh) rotate(360deg);}
+}
+
+/* ✨ STARS */
+.star{
+    position:fixed;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+    opacity:0.6;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:0.2;}
+    50%{opacity:1;}
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+body{
+    padding:15px;
+}
+
+h1{
+    font-size:2rem;
+}
+
+.animal{
+    font-size:52px;
+}
+
+.section{
+    padding:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🌸 Marissa's Birthday Zodiac Basket 🌸</h1>
+
+<!-- 🎂 CAKE -->
+<div class="section" onclick="blowCandles()" id="cake">
+
+<h2>🎂 Make a wish</h2>
+
+<div id="cakeDisplay">🎂🕯️🕯️🕯️</div>
+
+<p id="cakeText">tap the cake to blow out the candles ✨</p>
+
+</div>
+
+<!-- 🎵 SPOTIFY -->
+<div class="music-box">
+
+<iframe
+style="border-radius:12px"
+src="https://open.spotify.com/embed/track/2UhbCSrBaDe2QgDEuha9od"
+width="100%"
+height="80"
+frameborder="0"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+</div>
+
+<!-- ANIMALS -->
+<div class="animal-container">
+
+<div class="animal" onclick="openSection('rabbit')">🐰</div>
+<div class="animal" onclick="openSection('rat')">🐀</div>
+<div class="animal" onclick="openSection('tiger')">🐯</div>
+<div class="animal" onclick="openSection('cat')">🐱</div>
+
+</div>
+
+<!-- 🐰 RABBIT -->
+<div id="rabbit" class="section" style="display:none;">
+<h2>🐰 Rabbit — First Memory</h2>
+
+<p>
+I think it’s lwk funny to think about how when we first met.
+
+<br><br>
+
+I def think our first memories or moments together were pretty different. You were def a lil meanie to me and a lil bully. It's crazy to think that you were once called “that one” but little did I know that I would slowly want this girl (you) so much and now you're my honey
+
+<br><br>
+
+I’m really glad we were able to be friends, tease each other and somehow grew into something so special now
+
+<br><br>
+
+Js want to let u know that I'm super grateful to have met you
+</p>
+
+<button class="close-btn" onclick="closeSections()">close</button>
+</div>
+
+<!-- 🐀 RAT -->
+<div id="rat" class="section" style="display:none;">
+<h2>🐀 Rat — Chaos Memories</h2>
+
+<p>Looking back at this, I think you manifested us &lt;3</p>
+
+<img src="rat.jpg">
+<img src="rat2.jpg">
+
+<button class="close-btn" onclick="closeSections()">close</button>
+</div>
+
+<!-- 🐯 TIGER -->
+<div id="tiger" class="section" style="display:none;">
+<h2>🐯 Tiger — You</h2>
+
+<p>MARISSA-
+you. you are genuinely one of the easiest people to talk to! You got that energy that makes everything feels alive and shit. I call you a lil meanie and a lil bully but deep down I know you have the purest and kindest heart. I can see in our conversations in how much you care about people around you. You are goofy and silly and funny and just pretty darn amazing. I love your silly quirky side like how you will never let anyone put down Fruit Basket. I know there’s so much more to you and I want to get to know all of you. I’m really glad you came into my life ❤️</p>
+
+<button class="close-btn" onclick="closeSections()">close</button>
+</div>
+
+<!-- 🐱 CAT -->
+<div id="cat" class="section" style="display:none;">
+<h2>🐱 Cat — Birthday Wishes</h2>
+
+<p>
+Happy birthday again, honey! ❤️  
+I hope this year brings you beautiful memories, good people, and all the little things that make you smile!
+
+<br><br>
+
+I know I probably don’t say this ever but I’m really glad I got to meet you. Even though we haven’t known each other for that long, somehow you’ve already become someone really special to me! Literally talking to you has honestly become one of my favorite parts of my day.
+<br><br>
+
+This is just a little something to show you my appreciation in how much I care about you and want to make you feel loved on your special day!
+
+<br><br>
+
+I’m very grateful to be a part of your day! ❤️
+</p>
+
+<button class="close-btn" onclick="closeSections()">close</button>
+</div>
+
+<script>
+
+/* CAKE */
+let blown=false;
+
+function blowCandles(){
+
+if(blown) return;
+
+blown=true;
+
+document.getElementById("cakeDisplay").innerHTML="🎂💨";
+
+setTimeout(()=>{
+
+document.getElementById("cakeDisplay").innerHTML="🎂✨";
+
+document.getElementById("cakeText").innerHTML="✨ happy birthday honey";
+
+},500);
+
+}
+
+/* OPEN */
+function openSection(id){
+
+closeSections();
+
+document.getElementById(id).style.display="block";
+
+}
+
+/* CLOSE */
+function closeSections(){
+
+document.querySelectorAll(".section").forEach(s=>{
+
+if(s.id !== "cake"){
+    s.style.display="none";
+}
+
+});
+
+}
+
+/* 🌸 SAKURA */
+for(let i=0;i<35;i++){
+
+let p=document.createElement("div");
+
+p.className="petal";
+
+p.innerHTML="🌸";
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(p);
+
+}
+
+/* ✨ STARS */
+for(let i=0;i<60;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(s);
+
+}
+
+</script>
+
+</body>
+</html>
